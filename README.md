@@ -1,4 +1,4 @@
-# AI Agent Platform
+# VoltAgent AI Agent Platform
 
 <div align="center">
 <a href="https://voltagent.dev/">
@@ -167,7 +167,7 @@ As teams grow, coordination becomes critical. You need prompt version control fo
 - Role-based access control
 - Shared dashboards & analytics
 
-📖 [Operation Context docs](https://voltagent.dev/docs/agents/context/)
+📖 [Operation Context docs](https://voltagent.dev/docs/observability/developer-console/)
 
 Building and maintaining this requires expertise in distributed systems, LLM APIs, databases, observability, security, and DevOps.
 
@@ -331,7 +331,7 @@ VoltAgent provides solutions for 11 categories of agent infrastructure:
 
 **VoltAgent provides:** Prompt version control in source and VoltOps store, cost attribution tags (team, project, user), audit trails with user/session correlation, PII handling and data retention policies, and role-based tool access via OperationContext.
 
-**📖 [Operation Context docs](https://voltagent.dev/docs/agents/context/)**
+**📖 [Operation Context docs](https://voltagent.dev/docs/observability/developer-console/)**
 
 ## VoltAgent vs. Building From Scratch
 
@@ -352,17 +352,7 @@ VoltAgent provides solutions for 11 categories of agent infrastructure:
 | **Team collaboration** | Build prompt editor, cost dashboards, audit log viewer | VoltOps console with team views, cost attribution, session replays |
 | **Estimated time to production** | Significant engineering effort | 1-2 weeks (prototype to MVP) |
 
-### Why Teams Choose VoltAgent
 
-Here's how VoltAgent fits different use cases:
-
-| What You're Building | Why VoltAgent Fits |
-| --- | --- |
-| **First AI agent prototype** | `npm create voltagent-app@latest` scaffolds everything in 60 seconds. Pick your model (OpenAI, Anthropic, Google, etc.), chat with your agent via VoltOps console, iterate instantly. |
-| **Production customer support bot** | Durable memory (Postgres/Supabase), conversation history, guardrails for safety, full observability. Scale horizontally, integrate with existing auth, deploy to your VPC. |
-| **Multi-agent research system** | Sub-agent orchestration, typed workflows, parallel execution, streaming results. Each specialist agent gets its own memory and tools while the supervisor coordinates. |
-| **Enterprise automation** | Compliance-ready audit trails, role-based access control, PII detection, cost budgets, prompt governance. Deploy on-prem or hybrid cloud with full control. |
-| **Voice/real-time agents** | ElevenLabs/OpenAI voice adapters, WebSocket streaming, edge deployment (Cloudflare Workers), <100ms latency. Cancellation and error recovery. |
 
 ## Platform Architecture: How It All Fits Together
 
@@ -535,21 +525,6 @@ VoltAgent adapts to diverse hosting strategies. Choose based on request patterns
 - **Limitations**: No Node.js APIs (fs, child_process), strict CPU/memory caps, 1MB script size; skip heavy vector libraries or LLM SDKs.
 - **Use cases**: Chat widgets, voice bots, content moderation—anything latency-sensitive and stateless.
 
-### Hybrid Setups
-- **Pattern**: Edge for routing/auth/caching + Node server for complex agents/workflows.
-- **Example**: Cloudflare Worker validates requests and streams simple responses; forwards multi-step tasks to Kubernetes-hosted VoltAgent cluster.
-- **Benefits**: Optimize cost (edge handles 90% of load), latency (critical path stays fast), and capability (offload heavyweight ops).
-
-### Decision Matrix
-
-| Request Pattern | Memory Needs | Latency Priority | Cost Sensitivity | Recommended Environment |
-| --- | --- | --- | --- | --- |
-| High-throughput API (>10 req/s sustained) | Durable, queryable | Moderate | Low | Node.js + Postgres/Supabase |
-| Bursty traffic (spikes, idle periods) | Session-scoped or managed | Moderate | High | Vercel/Netlify Functions |
-| Real-time chat/voice (<100ms target) | Minimal or cached | Critical | Moderate | Cloudflare Workers |
-| Long workflows (>30s, multi-agent) | Durable, shareable | Low | Low | Node.js (Kubernetes/ECS) |
-| Frontend-integrated (Next.js app) | Session or managed | Moderate | High | Next.js API routes (Vercel) |
-| Multi-region global service | Distributed or replicated | Critical | Moderate | Cloudflare Workers + R2/KV |
 
 ## Building Your First Production Agent
 
@@ -566,18 +541,7 @@ VoltAgent adapts to diverse hosting strategies. Choose based on request patterns
    📖 [API Overview docs](https://voltagent.dev/docs/api/overview/) | [MCP Server docs](https://voltagent.dev/docs/agents/mcp/mcp-server/)
 5. **Instrument observability**: Run locally with automatic VoltOps tracing; add `VOLTAGENT_PUBLIC_KEY`/`VOLTAGENT_SECRET_KEY` for remote telemetry, exports, and managed memory.
 
-### Production Hardening Checklist
-- **Error handling**: Wrap tool calls in try/catch, define retry policies for transient failures, implement circuit breakers for flaky APIs.
-- **Guardrails**: Add input validation (prompt injection, PII detection), output filters (profanity, hallucination checks), and rate limits.
 
-  📖 [Guardrails docs](https://voltagent.dev/docs/guardrails/overview/)
-- **Load testing**: Simulate peak traffic with `k6`, `Artillery`, or `Locust`; measure p95 latency, error rates, and token consumption under load.
-- **Model fallback**: Configure primary/fallback provider pairs (e.g., GPT-4 → GPT-3.5-turbo on timeout); test graceful degradation.
-- **Cost controls**: Set per-user/per-session budgets in VoltOps, cache expensive embeddings/retrievals, use smaller models for simple tasks.
-- **Security review**: Rotate API keys, validate user inputs, sanitize tool outputs, audit memory access patterns, enforce least-privilege IAM roles.
-- **Monitoring & alerts**: Define SLOs (e.g., 95% of requests < 2s, error rate < 1%), configure VoltOps alerts, integrate with PagerDuty/Slack.
-- **Versioning & rollback**: Tag agent/prompt versions in source control, use VoltOps prompt management for instant rollback, maintain eval suites for regression checks.
-- **Compliance & auditing**: Log all user interactions, anonymize PII in traces, configure data retention policies, generate audit trails for regulated industries.
 
 ## Team Collaboration & Governance
 
@@ -602,16 +566,12 @@ As agent fleets grow, coordinated development and policy enforcement become crit
 ### Context & Session Standards
 - **OperationContext conventions**: Standardize metadata keys (e.g., `userId`, `sessionId`, `tenantId`, `traceId`) so tools, hooks, and workflows access consistent data.
 
-  📖 [Operation Context docs](https://voltagent.dev/docs/agents/context/)
+  📖 [Operation Context docs](https://voltagent.dev/docs/observability/developer-console/)
 - **Audit trails**: Pass `userId` and `requestId` through all agent invocations; VoltOps traces automatically correlate sessions for compliance reviews.
 - **Cost attribution**: Tag contexts with `teamId` or `projectId`; export VoltOps data to BI tools for chargeback accounting.
 - **Access control**: Inject user permissions into context; tools check `context.user.role` before executing sensitive operations.
 
-### Cost Management & Budgets
-- **Per-agent quotas**: Set monthly token limits per agent in VoltOps; block requests once exceeded, alert finance team.
-- **Team dashboards**: Aggregate spend by team, project, or user cohort; identify cost outliers (inefficient prompts, runaway loops).
-- **Model tiering**: Route simple queries to fast/cheap models (GPT-3.5, Gemini Flash), reserve expensive models (GPT-4, Claude Opus) for complex reasoning or guardrail failures.
-- **Caching strategy**: Store frequent tool results, embeddings, and retrieval hits in Redis/KV; reduce redundant LLM calls by 30-50%.
+
 
 ### Compliance & Data Governance
 - **PII handling**: Mask or tokenize sensitive data before sending to LLMs; use guardrails to detect accidental PII leakage in outputs.
