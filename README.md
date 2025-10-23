@@ -1,5 +1,13 @@
 # AI Agent Platform
 
+<div align="center">
+<a href="https://voltagent.dev/">
+<img width="1800" alt="VoltAgent Platform" src="https://github.com/user-attachments/assets/9259e833-0f5c-4eb6-8cc7-4e6930cc27e1" />
+</a>
+</div>
+
+<br/>
+
 ## What Are AI Agents?
 
 AI agents wrap Large Language Models (LLMs) with tools, memory, and reasoning capabilities. Unlike chatbots that respond to single prompts, agents:
@@ -22,33 +30,195 @@ Shipping agents means solving:
 - **Deployment**: Scaling across edge, serverless, and server environments
 - **Monitoring**: Performance, quality, and cost analytics
 
-Building this from scratch: 3-6 months of engineering.
+Building this from scratch requires significant engineering effort.
 
 ## What You Need to Build AI Agents
 
-Requirements for shipping agents to production:
+Building production AI agents requires solving 11 categories of infrastructure:
 
-| Category | Requirements |
-| --- | --- |
-| **Core Runtime** | Agent orchestration engine<br/>LLM provider abstraction (OpenAI, Anthropic, Google, etc.)<br/>Streaming response handling<br/>Cancellation & timeout controls<br/>Type-safe agent definitions |
-| **Tools & Integration** | Tool/function calling framework<br/>API integration patterns<br/>Error handling & retries<br/>Rate limiting & backpressure<br/>Model Context Protocol (MCP) support |
-| **Multi-Agent Coordination** | Sub-agent orchestration<br/>Task routing & delegation<br/>Context sharing across agents<br/>Parallel execution & streaming |
-| **Memory & State** | Conversation history storage<br/>Session management<br/>Semantic search & recall<br/>Multi-user isolation<br/>Database adapters (Postgres, Supabase, etc.) |
-| **Workflow Automation** | Multi-step pipelines<br/>Conditional logic & branching<br/>Parallel execution<br/>Human-in-the-loop gates<br/>Suspend/resume capabilities |
-| **Retrieval & RAG** | Vector store integrations<br/>Document chunking & embedding<br/>Semantic search<br/>Hybrid search strategies<br/>Custom retriever interfaces |
-| **Safety & Compliance** | Input validation & sanitization<br/>Output filtering & moderation<br/>Prompt injection detection<br/>PII detection & masking<br/>Rate limiting & abuse prevention |
-| **Observability & Debugging** | Distributed tracing (OpenTelemetry)<br/>Real-time logging<br/>Cost tracking per agent/session/user<br/>Session replay capability<br/>Error diagnostics & stack traces<br/>Performance metrics & bottleneck detection |
-| **Quality Assurance** | Automated evaluation framework<br/>Scorer registry (accuracy, relevance, safety)<br/>Dataset management<br/>A/B testing infrastructure<br/>Regression detection<br/>CI/CD integration |
-| **Deployment & Scale** | Server adapters (Node.js, serverless, edge)<br/>Horizontal scaling support<br/>Load balancing<br/>Docker/Kubernetes configs<br/>Environment-specific optimization |
-| **Team Collaboration** | Prompt version control<br/>Cost attribution & budgets<br/>Audit trails & compliance logs<br/>Role-based access control<br/>Shared dashboards & analytics |
+### Core Runtime
 
-Building and maintaining this takes 3-6 months and requires expertise in distributed systems, LLM APIs, databases, observability, security, and DevOps.
+The foundation of any agent system. You need a runtime that manages agent lifecycle, coordinates LLM calls, and handles responses safely without reinventing the wheel for every project.
+
+- Agent orchestration engine
+- LLM provider abstraction (OpenAI, Anthropic, Google, etc.)
+- Streaming response handling
+- Cancellation & timeout controls
+- Type-safe agent definitions
+
+📖 [Agent Overview docs](https://voltagent.dev/docs/agents/overview/)
+
+### Tools & Integration
+
+Agents become useful when they can interact with external systems. You need a framework to define tools safely, handle API failures gracefully, and connect to existing services without writing custom adapters for each one.
+
+- Tool/function calling framework
+- API integration patterns
+- Error handling & retries
+- Rate limiting & backpressure
+- Model Context Protocol (MCP) support
+
+📖 [Tools docs](https://voltagent.dev/docs/agents/tools/) | [MCP docs](https://voltagent.dev/docs/agents/mcp/)
+
+### Multi-Agent Coordination
+
+Complex problems require teams of specialized agents working together. You need a way to route tasks to the right agent, share context between them, and coordinate their work without building custom message passing infrastructure.
+
+- Sub-agent orchestration
+- Task routing & delegation
+- Context sharing across agents
+- Parallel execution & streaming
+
+📖 [Sub-agents docs](https://voltagent.dev/docs/agents/sub-agents/)
+
+### Memory & State
+
+Agents need to remember past conversations and learn from interactions. You need persistent storage that lets agents recall context, search historical data semantically, and keep each user's information separate and secure.
+
+- Conversation history storage
+- Session management
+- Semantic search & recall
+- Multi-user isolation
+- Database adapters (Postgres, Supabase, etc.)
+
+📖 [Memory Overview docs](https://voltagent.dev/docs/agents/memory/overview/)
+
+### Workflow Automation
+
+Real business processes involve multiple steps, branching logic, and human approvals. You need a workflow engine that can orchestrate complex automations, pause for human input, and recover from failures without starting over.
+
+- Multi-step pipelines
+- Conditional logic & branching
+- Parallel execution
+- Human-in-the-loop gates
+- Suspend/resume capabilities
+
+📖 [Workflows docs](https://voltagent.dev/docs/workflows/overview/)
+
+### Retrieval & RAG
+
+Agents need to ground their responses in your company's data, not just general knowledge. You need retrieval systems that can search your documents semantically, combine multiple search strategies, and work with any vector database.
+
+- Vector store integrations
+- Document chunking & embedding
+- Semantic search
+- Hybrid search strategies
+- Custom retriever interfaces
+
+📖 [RAG Overview docs](https://voltagent.dev/docs/rag/overview/)
+
+### Safety & Compliance
+
+Production agents handle sensitive data and user inputs you can't fully control. You need guardrails that block malicious prompts, filter harmful outputs, detect PII leaks, and prevent abuse before problems reach users.
+
+- Input validation & sanitization
+- Output filtering & moderation
+- Prompt injection detection
+- PII detection & masking
+- Rate limiting & abuse prevention
+
+📖 [Guardrails docs](https://voltagent.dev/docs/guardrails/overview/)
+
+### Observability & Debugging
+
+You can't fix what you can't see. When agents misbehave, you need to trace every decision, replay sessions exactly as users experienced them, track costs per interaction, and identify performance bottlenecks in real-time.
+
+- Distributed tracing (OpenTelemetry)
+- Real-time logging
+- Cost tracking per agent/session/user
+- Session replay capability
+- Error diagnostics & stack traces
+- Performance metrics & bottleneck detection
+
+📖 [VoltOps Platform docs](https://voltagent.dev/docs/observability/developer-console/)
+
+### Quality Assurance
+
+Manual testing doesn't scale for AI systems. You need automated evaluations that measure accuracy and hallucination rates, catch regressions in CI/CD pipelines, and track quality trends as you iterate on prompts and models.
+
+- Automated evaluation framework
+- Scorer registry (accuracy, relevance, safety)
+- Dataset management
+- A/B testing infrastructure
+- Regression detection
+- CI/CD integration
+
+📖 [Evaluations docs](https://voltagent.dev/docs/evals/overview/)
+
+### Deployment & Scale
+
+Different use cases demand different infrastructure. You need deployment options for traditional servers, serverless platforms, and edge networks—plus the ability to scale horizontally without rewriting your agent code.
+
+- Server adapters (Node.js, serverless, edge)
+- Horizontal scaling support
+- Load balancing
+- Docker/Kubernetes configs
+- Environment-specific optimization
+
+📖 [Deployment docs](https://voltagent.dev/docs/deployment/overview/)
+
+### Team Collaboration
+
+As teams grow, coordination becomes critical. You need prompt version control for safe deployments, cost tracking by team or project, audit logs for compliance, and role-based access to control who can modify what.
+
+- Prompt version control
+- Cost attribution & budgets
+- Audit trails & compliance logs
+- Role-based access control
+- Shared dashboards & analytics
+
+📖 [Operation Context docs](https://voltagent.dev/docs/agents/context/)
+
+Building and maintaining this requires expertise in distributed systems, LLM APIs, databases, observability, security, and DevOps.
 
 ## VoltAgent Platform
 
 VoltAgent provides a TypeScript runtime (VoltAgent Core) and managed observability layer (VoltOps).
 
-**Platform components:**
+### Quick Start
+
+Create a new VoltAgent project in seconds:
+
+```bash
+npm create voltagent-app@latest
+```
+
+Example agent setup:
+
+```typescript
+import { VoltAgent, Agent, Memory } from "@voltagent/core";
+import { LibSQLMemoryAdapter } from "@voltagent/libsql";
+import { honoServer } from "@voltagent/server-hono";
+import { openai } from "@ai-sdk/openai";
+
+const memory = new Memory({
+  storage: new LibSQLMemoryAdapter({ url: "file:./.voltagent/memory.db" }),
+});
+
+const agent = new Agent({
+  name: "my-agent",
+  instructions: "A helpful assistant",
+  model: openai("gpt-4o-mini"),
+  tools: [weatherTool],
+  memory,
+});
+
+new VoltAgent({
+  agents: { agent },
+  workflows: { expenseApprovalWorkflow },
+  server: honoServer(),
+});
+```
+
+Run your agent:
+
+```bash
+npm run dev
+```
+
+📖 [Quick Start Guide](https://voltagent.dev/docs/quick-start/)
+
+### Platform Components
 
 ```
 ┌──────────────────────────────────────────────────────┐
@@ -180,7 +350,7 @@ VoltAgent provides solutions for 11 categories of agent infrastructure:
 | **Evaluations** | Write test harness, define metrics, aggregate results, track regressions | `@voltagent/evals` with scorer registry and VoltOps dashboards |
 | **Deployment** | Configure servers, handle secrets, set up monitoring, write Dockerfiles | Hono server, serverless adapters, K8s examples provided |
 | **Team collaboration** | Build prompt editor, cost dashboards, audit log viewer | VoltOps console with team views, cost attribution, session replays |
-| **Estimated time to production** | 3-6 months of engineering | 1-2 weeks (prototype to MVP) |
+| **Estimated time to production** | Significant engineering effort | 1-2 weeks (prototype to MVP) |
 
 ### Why Teams Choose VoltAgent
 
@@ -254,7 +424,17 @@ User Request
 
 ## Observability & Monitoring with VoltOps
 
-VoltOps transforms agent development from black-box guesswork into data-driven iteration. Here's how to leverage observability at each stage:
+VoltOps transforms agent development from black-box guesswork into data-driven iteration.
+
+<div align="center">
+<img alt="VoltOps Observability Overview" src="https://cdn.voltagent.dev/console/observability.png" />
+</div>
+
+<br/>
+
+🎬 [Try Live Demo](https://console.voltagent.dev/demo)
+
+Here's how to leverage observability at each stage:
 
 ### Local Development
 - **Auto-tracing**: Run `pnpm dev` and VoltOps automatically captures every agent invocation, tool call, and memory access—no configuration required.
@@ -266,10 +446,29 @@ VoltOps transforms agent development from black-box guesswork into data-driven i
 ### Production Monitoring
 - **Trace timelines**: Visual waterfall view shows agent reasoning, tool latency, LLM response time, and total request duration. Identify bottlenecks at a glance.
 
+  <div align="center">
+  <img alt="VoltOps Traces" src="https://cdn.voltagent.dev/console/traces.png" />
+  </div>
+
+  <br/>
+
   📖 [Developer Console docs](https://voltagent.dev/docs/observability/developer-console/)
 - **Cost tracking**: Per-agent, per-session, and per-user token usage with real-time cost calculation. Set budget alerts and analyze spend by model, tool, or workflow step.
+
+  <div align="center">
+  <img alt="VoltOps Dashboard" src="https://cdn.voltagent.dev/console/dashboard.png" />
+  </div>
+
+  <br/>
+
 - **Session replays**: Reproduce any user interaction by replaying the exact agent state, memory contents, and tool results. Debug edge cases and validate fixes.
 - **Error diagnostics**: Stack traces, failed tool calls, guardrail blocks, and timeout events appear inline with full context—no more hunting through fragmented logs.
+
+  <div align="center">
+  <img alt="VoltOps Logs" src="https://cdn.voltagent.dev/console/logs.png" />
+  </div>
+
+  <br/>
 
 ### Quality Assurance
 - **Evaluation dashboards**: Compare prompt versions, model choices, or tool configurations using `@voltagent/evals`. VoltOps aggregates pass/fail rates, scorer distributions, and regression indicators.
