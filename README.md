@@ -19,15 +19,16 @@ AI agents wrap Large Language Models (LLMs) with tools, memory, and reasoning ca
 - Evaluate and adapt through feedback loops
 
 
-  <div align="center">
+### Why Building AI Agents Takes Time
+
+<br/> 
+<div align="center">
 <a href="https://github.com/VoltAgent/voltagent/">
 <img width="800" height="500" alt="diagram" src="https://github.com/user-attachments/assets/825c64ff-4033-4b0b-a8eb-192352633fd9" />
-
 </a>
 </div>
 
-
-### Why Building AI Agents Takes Time
+<br/> 
 
 Shipping agents means solving:
 
