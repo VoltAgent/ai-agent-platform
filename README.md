@@ -1,7 +1,7 @@
 # AI Agent Platform
 
 <div align="center">
-<a href="https://voltagent.dev/">
+<a href="https://github.com/VoltAgent/voltagent/">
 <img width="1800" alt="VoltAgent Platform" src="https://github.com/user-attachments/assets/9259e833-0f5c-4eb6-8cc7-4e6930cc27e1" />
 </a>
 </div>
@@ -46,7 +46,7 @@ The foundation of any agent system. You need a runtime that manages agent lifecy
 - Cancellation & timeout controls
 - Type-safe agent definitions
 
-📖 [Agent Overview docs](https://voltagent.dev/docs/agents/overview/)
+📖 [Agent Overview docs ↗](https://voltagent.dev/docs/agents/overview/)
 
 ### Tools & Integration
 
@@ -58,7 +58,7 @@ Agents become useful when they can interact with external systems. You need a fr
 - Rate limiting & backpressure
 - Model Context Protocol (MCP) support
 
-📖 [Tools docs](https://voltagent.dev/docs/agents/tools/) | [MCP docs](https://voltagent.dev/docs/agents/mcp/)
+📖 [Tools docs ↗](https://voltagent.dev/docs/agents/tools/) | [MCP docs ↗](https://voltagent.dev/docs/agents/mcp/)
 
 ### Multi-Agent Coordination
 
@@ -69,7 +69,7 @@ Complex problems require teams of specialized agents working together. You need 
 - Context sharing across agents
 - Parallel execution & streaming
 
-📖 [Sub-agents docs](https://voltagent.dev/docs/agents/sub-agents/)
+📖 [Sub-agents docs ↗](https://voltagent.dev/docs/agents/sub-agents/)
 
 ### Memory & State
 
@@ -81,7 +81,7 @@ Agents need to remember past conversations and learn from interactions. You need
 - Multi-user isolation
 - Database adapters (Postgres, Supabase, etc.)
 
-📖 [Memory Overview docs](https://voltagent.dev/docs/agents/memory/overview/)
+📖 [Memory Overview docs ↗](https://voltagent.dev/docs/agents/memory/overview/)
 
 ### Workflow Automation
 
@@ -93,7 +93,7 @@ Real business processes involve multiple steps, branching logic, and human appro
 - Human-in-the-loop gates
 - Suspend/resume capabilities
 
-📖 [Workflows docs](https://voltagent.dev/docs/workflows/overview/)
+📖 [Workflows docs ↗](https://voltagent.dev/docs/workflows/overview/)
 
 ### Retrieval & RAG
 
@@ -105,7 +105,7 @@ Agents need to ground their responses in your company's data, not just general k
 - Hybrid search strategies
 - Custom retriever interfaces
 
-📖 [RAG Overview docs](https://voltagent.dev/docs/rag/overview/)
+📖 [RAG Overview docs ↗](https://voltagent.dev/docs/rag/overview/)
 
 ### Safety & Compliance
 
@@ -117,7 +117,7 @@ Production agents handle sensitive data and user inputs you can't fully control.
 - PII detection & masking
 - Rate limiting & abuse prevention
 
-📖 [Guardrails docs](https://voltagent.dev/docs/guardrails/overview/)
+📖 [Guardrails docs ↗](https://voltagent.dev/docs/guardrails/overview/)
 
 ### Observability & Debugging
 
@@ -130,7 +130,7 @@ You can't fix what you can't see. When agents misbehave, you need to trace every
 - Error diagnostics & stack traces
 - Performance metrics & bottleneck detection
 
-📖 [VoltOps Platform docs](https://voltagent.dev/docs/observability/developer-console/)
+📖 [VoltOps Platform docs ↗](https://voltagent.dev/docs/observability/developer-console/)
 
 ### Quality Assurance
 
@@ -143,7 +143,7 @@ Manual testing doesn't scale for AI systems. You need automated evaluations that
 - Regression detection
 - CI/CD integration
 
-📖 [Evaluations docs](https://voltagent.dev/docs/evals/overview/)
+📖 [Evaluations docs ↗](https://voltagent.dev/docs/evals/overview/)
 
 ### Deployment & Scale
 
@@ -155,7 +155,7 @@ Different use cases demand different infrastructure. You need deployment options
 - Docker/Kubernetes configs
 - Environment-specific optimization
 
-📖 [Deployment docs](https://voltagent.dev/docs/deployment/overview/)
+📖 [Deployment docs ↗](https://voltagent.dev/docs/deployment/overview/)
 
 ### Team Collaboration
 
@@ -167,7 +167,7 @@ As teams grow, coordination becomes critical. You need prompt version control fo
 - Role-based access control
 - Shared dashboards & analytics
 
-📖 [Operation Context docs](https://voltagent.dev/docs/agents/context/)
+📖 [Operation Context docs ↗](https://voltagent.dev/docs/agents/context/)
 
 Building and maintaining this requires expertise in distributed systems, LLM APIs, databases, observability, security, and DevOps.
 
@@ -216,7 +216,7 @@ Run your agent:
 npm run dev
 ```
 
-📖 [Quick Start Guide](https://voltagent.dev/docs/quick-start/)
+📖 [Quick Start Guide ↗](https://voltagent.dev/docs/quick-start/)
 
 ### Platform Components
 
@@ -251,7 +251,7 @@ You need type-safe agent definitions to catch errors early, a way to change prom
 
 **VoltAgent provides:** `Agent` class with TypeScript types and Zod validation, 30+ LLM providers via Vercel AI SDK (OpenAI, Anthropic, Google, Mistral, Groq, xAI, Ollama), dynamic instructions from code or VoltOps prompt store, native streaming with backpressure handling, and graceful cancellation with timeout controls.
 
-**📖 [Agent Overview docs](https://voltagent.dev/docs/agents/overview/)**
+**📖 [Agent Overview docs ↗](https://voltagent.dev/docs/agents/overview/)**
 
 ### ✅ Tool Integration & External APIs
 
@@ -259,7 +259,7 @@ You need tools with type validation to prevent bad inputs, hooks to add logging 
 
 **VoltAgent provides:** `createTool` with Zod schemas and auto-generated OpenAPI specs, tool registries and reusable toolkits, before/after hooks for logging/auth/retries, Model Context Protocol (MCP) client for 100+ integrations (GitHub, Google Drive, Zapier), and ability to expose your tools as MCP servers for Claude Desktop and Cline.
 
-**📖 [Tools docs](https://voltagent.dev/docs/agents/tools/) | [MCP docs](https://voltagent.dev/docs/agents/mcp/)**
+**📖 [Tools docs ↗](https://voltagent.dev/docs/agents/tools/) | [MCP docs ↗](https://voltagent.dev/docs/agents/mcp/)**
 
 ### ✅ Multi-Agent Orchestration
 
@@ -267,7 +267,7 @@ You need to split complex tasks across specialized agents, route work to the rig
 
 **VoltAgent provides:** Supervisor patterns with `agent.run()` nesting, sub-agent streaming and partial results, shared memory across agent hierarchies, and cost attribution per sub-agent in VoltOps.
 
-**📖 [Sub-agents docs](https://voltagent.dev/docs/agents/sub-agents/)**
+**📖 [Sub-agents docs ↗](https://voltagent.dev/docs/agents/sub-agents/)**
 
 ### ✅ Memory & Persistence
 
@@ -275,7 +275,7 @@ You need to remember past conversations, search old messages to recall facts, re
 
 **VoltAgent provides:** Pluggable memory adapters (InMemory, LibSQL, Postgres, Supabase, Managed via VoltOps), working memory for short-term context, semantic search over conversation history, and thread/session management with user isolation.
 
-**📖 [Memory Overview docs](https://voltagent.dev/docs/agents/memory/overview/)**
+**📖 [Memory Overview docs ↗](https://voltagent.dev/docs/agents/memory/overview/)**
 
 ### ✅ Workflow Automation
 
@@ -283,7 +283,7 @@ You need to run multiple steps in order or at the same time, branch based on con
 
 **VoltAgent provides:** Workflow engine with `andThen`, `andAgent`, `andAll`, `andWhen`, `andRace` steps, suspend/resume for human approval gates, REST API execution with progress streaming, and workflow versioning with replay.
 
-**📖 [Workflows docs](https://voltagent.dev/docs/workflows/overview/)**
+**📖 [Workflows docs ↗](https://voltagent.dev/docs/workflows/overview/)**
 
 ### ✅ Retrieval & RAG
 
@@ -291,7 +291,7 @@ You need to search your documents semantically, combine keyword and vector searc
 
 **VoltAgent provides:** Retriever abstraction for Chroma, Pinecone, and Qdrant, custom retriever interfaces, embedding generation via AI SDK, and retrieval step tracing in VoltOps.
 
-**📖 [RAG Overview docs](https://voltagent.dev/docs/rag/overview/)**
+**📖 [RAG Overview docs ↗](https://voltagent.dev/docs/rag/overview/)**
 
 ### ✅ Safety & Guardrails
 
@@ -299,7 +299,7 @@ You need to validate user inputs to block malicious prompts, filter outputs to p
 
 **VoltAgent provides:** Input/output guardrail decorators, prompt injection detection, stream-friendly moderation, and policy violation logging in VoltOps.
 
-**📖 [Guardrails docs](https://voltagent.dev/docs/guardrails/overview/)**
+**📖 [Guardrails docs ↗](https://voltagent.dev/docs/guardrails/overview/)**
 
 ### ✅ Observability & Debugging
 
@@ -307,7 +307,7 @@ You need to see what your agent did step-by-step, track token costs per agent or
 
 **VoltAgent provides:** VoltOps Console with visual trace timelines and waterfall views, per-agent/session/user token and cost breakdown, session replay with exact state/memory/tool results, OpenTelemetry export to VoltOps/DataDog/Grafana via OTLP, and prompt management for versioning, A/B testing, and rollback.
 
-**📖 [VoltOps Platform docs](https://voltagent.dev/docs/observability/developer-console/)**
+**📖 [VoltOps Platform docs ↗](https://voltagent.dev/docs/observability/developer-console/)**
 
 ### ✅ Quality Assurance & Testing
 
@@ -315,7 +315,7 @@ You need to run automated tests on your agents, measure accuracy and hallucinati
 
 **VoltAgent provides:** `@voltagent/evals` framework for offline and live evaluations, prebuilt scorers (accuracy, relevance, hallucination, PII leakage), custom scorer development, VoltOps eval dashboards with pass/fail trends, and CI pipeline integration.
 
-**📖 [Evaluations docs](https://voltagent.dev/docs/evals/overview/)**
+**📖 [Evaluations docs ↗](https://voltagent.dev/docs/evals/overview/)**
 
 ### ✅ Deployment Flexibility
 
@@ -323,7 +323,7 @@ You need to deploy to Node.js servers, serverless platforms like Vercel, edge ne
 
 **VoltAgent provides:** `@voltagent/server-hono` for standalone Node servers, `@voltagent/serverless-hono` for Vercel/Netlify/AWS Lambda, edge-compatible adapters for Cloudflare Workers, Docker/Kubernetes deployment guides, and environment-specific memory strategies.
 
-**📖 [Deployment docs](https://voltagent.dev/docs/deployment/overview/)**
+**📖 [Deployment docs ↗](https://voltagent.dev/docs/deployment/overview/)**
 
 ### ✅ Team Collaboration & Governance
 
@@ -331,7 +331,7 @@ You need to version prompts before deploying, track costs by team or project, ke
 
 **VoltAgent provides:** Prompt version control in source and VoltOps store, cost attribution tags (team, project, user), audit trails with user/session correlation, PII handling and data retention policies, and role-based tool access via OperationContext.
 
-**📖 [Operation Context docs](https://voltagent.dev/docs/agents/context/)**
+**📖 [Operation Context docs ↗](https://voltagent.dev/docs/agents/context/)**
 
 ## VoltAgent vs. Building From Scratch
 
@@ -411,16 +411,16 @@ User Request
 
 | Scenario | Recommended Capability | Why it helps | Example | VoltOps Features |
 | --- | --- | --- | --- | --- |
-| Prototype a conversational agent | `npm create voltagent-app@latest` scaffold + default agent | Instant project setup with VoltAgent server, VoltOps console link, and example workflow ([Quick Start](https://voltagent.dev/docs/quick-start/)) | [base](https://github.com/voltagent/voltagent/tree/main/examples/base) | Auto-tracing, live logs |
-| Connect to APIs or services | `createTool`, toolkits, Model Context Protocol client | Type-safe tools with lifecycle hooks and MCP connectivity ([Tools](https://voltagent.dev/docs/agents/tools/), [MCP Client](https://voltagent.dev/docs/agents/mcp/)) | [with-tools](https://github.com/voltagent/voltagent/tree/main/examples/with-tools), [with-mcp](https://github.com/voltagent/voltagent/tree/main/examples/with-mcp) | Tool call traces, latency tracking |
-| Coordinate multiple specialists | Supervisor + sub-agents | Route tasks, stream outputs, and maintain context across a team of agents ([Sub-agents](https://voltagent.dev/docs/agents/sub-agents/)) | [with-subagents](https://github.com/voltagent/voltagent/tree/main/examples/with-subagents), [with-youtube-to-blog](https://github.com/voltagent/voltagent/tree/main/examples/with-youtube-to-blog) | Agent hierarchy view, sub-agent cost attribution |
-| Retain knowledge across sessions | Memory adapters (InMemory, LibSQL, Postgres, Supabase, Managed) | Switch storage without rewriting logic, add semantic recall or working memory ([Memory Overview](https://voltagent.dev/docs/agents/memory/overview/)) | [with-postgres](https://github.com/voltagent/voltagent/tree/main/examples/with-postgres), [with-working-memory](https://github.com/voltagent/voltagent/tree/main/examples/with-working-memory) | Memory queries in traces, session replays |
-| Ground responses in your data | Retriever integrations + RAG examples | Bring vector stores (Chroma, Pinecone, Qdrant) or custom retrievers into agents ([RAG Overview](https://voltagent.dev/docs/rag/overview/)) | [with-rag-chatbot](https://github.com/voltagent/voltagent/tree/main/examples/with-rag-chatbot), [with-chroma](https://github.com/voltagent/voltagent/tree/main/examples/with-chroma) | Retrieval step inspection, source attribution |
-| Automate complex flows | Workflow engine steps (`andThen`, `andAgent`, `andAll`, `andWhen`, `andRace`) | Build multi-step automation with validation, human-in-the-loop, and REST execution ([Workflows](https://voltagent.dev/docs/workflows/overview/)) | [with-workflow](https://github.com/voltagent/voltagent/tree/main/examples/with-workflow) | Step-by-step visualization, conditional branch traces |
-| Enforce policy & safety | Input/output guardrails | Stream-friendly moderation, prompt injection protection, validation ([Guardrails](https://voltagent.dev/docs/guardrails/overview/)) | [with-guardrails](https://github.com/voltagent/voltagent/tree/main/examples/with-guardrails) | Policy violation alerts, blocked request logs |
-| Observe production behaviour | VoltOps console, OpenTelemetry exporters, managed dashboards | Live traces, cost analytics, replay runs, integrate with VoltOps or custom OTLP targets ([Logging & Observability](https://voltagent.dev/docs/observability/logging/), [Vercel AI Exporter](https://voltagent.dev/docs/integrations/vercel-ai/)) | [with-voltagent-exporter](https://github.com/voltagent/voltagent/tree/main/examples/with-voltagent-exporter) | Full trace timeline, token/cost breakdown, replay debugging |
-| Run automated evaluations | `@voltagent/evals` + VoltOps scoring | Offline/online tests, scorer registry, CI gates, VoltOps run summaries ([Evaluations](https://voltagent.dev/docs/evals/overview/)) | [with-offline-evals](https://github.com/voltagent/voltagent/tree/main/examples/with-offline-evals), [with-live-evals](https://github.com/voltagent/voltagent/tree/main/examples/with-live-evals) | Eval run dashboards, pass/fail metrics, regression detection |
-| Deploy reliably | Hono server adapters, serverless runners | Ship to Node servers, Cloudflare Workers, Netlify Functions, or hybrid setups ([Deployment Overview](https://voltagent.dev/docs/deployment/overview/)) | [with-nextjs](https://github.com/voltagent/voltagent/tree/main/examples/with-nextjs), [with-cloudflare-workers](https://github.com/voltagent/voltagent/tree/main/examples/with-cloudflare-workers) | Production traces, per-environment cost tracking |
+| Prototype a conversational agent | `npm create voltagent-app@latest` scaffold + default agent | Instant project setup with VoltAgent server, VoltOps console link, and example workflow ([Quick Start ↗](https://voltagent.dev/docs/quick-start/)) | [base ↗](https://github.com/voltagent/voltagent/tree/main/examples/base) | Auto-tracing, live logs |
+| Connect to APIs or services | `createTool`, toolkits, Model Context Protocol client | Type-safe tools with lifecycle hooks and MCP connectivity ([Tools ↗](https://voltagent.dev/docs/agents/tools/), [MCP Client ↗](https://voltagent.dev/docs/agents/mcp/)) | [with-tools ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-tools), [with-mcp ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-mcp) | Tool call traces, latency tracking |
+| Coordinate multiple specialists | Supervisor + sub-agents | Route tasks, stream outputs, and maintain context across a team of agents ([Sub-agents ↗](https://voltagent.dev/docs/agents/sub-agents/)) | [with-subagents ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-subagents), [with-youtube-to-blog ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-youtube-to-blog) | Agent hierarchy view, sub-agent cost attribution |
+| Retain knowledge across sessions | Memory adapters (InMemory, LibSQL, Postgres, Supabase, Managed) | Switch storage without rewriting logic, add semantic recall or working memory ([Memory Overview ↗](https://voltagent.dev/docs/agents/memory/overview/)) | [with-postgres ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-postgres), [with-working-memory ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-working-memory) | Memory queries in traces, session replays |
+| Ground responses in your data | Retriever integrations + RAG examples | Bring vector stores (Chroma, Pinecone, Qdrant) or custom retrievers into agents ([RAG Overview ↗](https://voltagent.dev/docs/rag/overview/)) | [with-rag-chatbot ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-rag-chatbot), [with-chroma ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-chroma) | Retrieval step inspection, source attribution |
+| Automate complex flows | Workflow engine steps (`andThen`, `andAgent`, `andAll`, `andWhen`, `andRace`) | Build multi-step automation with validation, human-in-the-loop, and REST execution ([Workflows ↗](https://voltagent.dev/docs/workflows/overview/)) | [with-workflow ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-workflow) | Step-by-step visualization, conditional branch traces |
+| Enforce policy & safety | Input/output guardrails | Stream-friendly moderation, prompt injection protection, validation ([Guardrails ↗](https://voltagent.dev/docs/guardrails/overview/)) | [with-guardrails ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-guardrails) | Policy violation alerts, blocked request logs |
+| Observe production behaviour | VoltOps console, OpenTelemetry exporters, managed dashboards | Live traces, cost analytics, replay runs, integrate with VoltOps or custom OTLP targets ([Logging & Observability ↗](https://voltagent.dev/docs/observability/logging/), [Vercel AI Exporter ↗](https://voltagent.dev/docs/integrations/vercel-ai/)) | [with-voltagent-exporter ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-voltagent-exporter) | Full trace timeline, token/cost breakdown, replay debugging |
+| Run automated evaluations | `@voltagent/evals` + VoltOps scoring | Offline/online tests, scorer registry, CI gates, VoltOps run summaries ([Evaluations ↗](https://voltagent.dev/docs/evals/overview/)) | [with-offline-evals ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-offline-evals), [with-live-evals ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-live-evals) | Eval run dashboards, pass/fail metrics, regression detection |
+| Deploy reliably | Hono server adapters, serverless runners | Ship to Node servers, Cloudflare Workers, Netlify Functions, or hybrid setups ([Deployment Overview ↗](https://voltagent.dev/docs/deployment/overview/)) | [with-nextjs ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-nextjs), [with-cloudflare-workers ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-cloudflare-workers) | Production traces, per-environment cost tracking |
 
 ## Observability & Monitoring with VoltOps
 
@@ -432,7 +432,7 @@ VoltOps transforms agent development from black-box guesswork into data-driven i
 
 <br/>
 
-🎬 [Try Live Demo](https://console.voltagent.dev/demo)
+🎬 [Try Live Demo ↗](https://console.voltagent.dev/demo)
 
 Here's how to leverage observability at each stage:
 
@@ -440,7 +440,7 @@ Here's how to leverage observability at each stage:
 - **Auto-tracing**: Run `pnpm dev` and VoltOps automatically captures every agent invocation, tool call, and memory access—no configuration required.
 - **Live logs**: Stream-friendly console output shows exactly what the agent is thinking, which tools it's calling, and how long each step takes.
 
-  📖 [Logging docs](https://voltagent.dev/docs/observability/logging/)
+  📖 [Logging docs ↗](https://voltagent.dev/docs/observability/logging/)
 - **Instant feedback**: Spot prompt issues, inefficient tool chains, or memory misses in real-time before committing code.
 
 ### Production Monitoring
@@ -452,7 +452,7 @@ Here's how to leverage observability at each stage:
 
   <br/>
 
-  📖 [Developer Console docs](https://voltagent.dev/docs/observability/developer-console/)
+  📖 [Developer Console docs ↗](https://voltagent.dev/docs/observability/developer-console/)
 - **Cost tracking**: Per-agent, per-session, and per-user token usage with real-time cost calculation. Set budget alerts and analyze spend by model, tool, or workflow step.
 
   <div align="center">
@@ -473,20 +473,20 @@ Here's how to leverage observability at each stage:
 ### Quality Assurance
 - **Evaluation dashboards**: Compare prompt versions, model choices, or tool configurations using `@voltagent/evals`. VoltOps aggregates pass/fail rates, scorer distributions, and regression indicators.
 
-  📖 [Evaluations docs](https://voltagent.dev/docs/evals/overview/)
+  📖 [Evaluations docs ↗](https://voltagent.dev/docs/evals/overview/)
 - **Prompt versioning**: Manage instructions in VoltOps prompt store, A/B test variations, and roll back problematic changes without redeploying code.
 
-  📖 [Agent Prompts docs](https://voltagent.dev/docs/agents/prompts/)
+  📖 [Agent Prompts docs ↗](https://voltagent.dev/docs/agents/prompts/)
 - **Regression detection**: CI pipelines call offline evals; VoltOps flags runs where accuracy, latency, or cost metrics degrade beyond thresholds.
 
 ### Advanced Integration
 - **OTLP exports**: Forward traces to VoltOps, DataDog, Grafana, or any OpenTelemetry-compatible backend for unified observability.
 
-  📖 [Vercel AI Exporter docs](https://voltagent.dev/docs/integrations/vercel-ai/)
+  📖 [Vercel AI Exporter docs ↗](https://voltagent.dev/docs/integrations/vercel-ai/)
 - **Custom metrics**: Emit business-level events (e.g., "order_placed", "research_complete") alongside LLM telemetry for end-to-end analytics.
 - **Managed memory inspection**: Query conversation history, working memory, and semantic recall state via VoltOps UI or REST API to validate knowledge retention.
 
-  📖 [Managed Memory docs](https://voltagent.dev/docs/agents/memory/managed-memory/)
+  📖 [Managed Memory docs ↗](https://voltagent.dev/docs/agents/memory/managed-memory/)
 
 **Actionable insights**: Use VoltOps data to optimize prompts (reduce token waste), refine tools (parallelize slow calls), tune memory (increase recall depth), and control costs (switch models or cache aggressively).
 
@@ -505,10 +505,10 @@ VoltAgent adapts to diverse hosting strategies. Choose based on request patterns
 - **Best for**: High-throughput APIs, long-running workflows, complex sub-agent orchestration, full persistence.
 - **Setup**: Deploy `@voltagent/server-hono` as a standalone Node process or Docker container.
 
-  📖 [Deployment Overview docs](https://voltagent.dev/docs/deployment/overview/)
+  📖 [Deployment Overview docs ↗](https://voltagent.dev/docs/deployment/overview/)
 - **Memory**: Postgres, Supabase, or Turso for durable, queryable history.
 
-  📖 [with-postgres](https://github.com/voltagent/voltagent/tree/main/examples/with-postgres) | [with-supabase](https://github.com/voltagent/voltagent/tree/main/examples/with-supabase) | [with-turso](https://github.com/voltagent/voltagent/tree/main/examples/with-turso)
+  📖 [with-postgres ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-postgres) | [with-supabase ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-supabase) | [with-turso ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-turso)
 - **Observability**: OTLP exporter sends traces to VoltOps or custom backends; leverage persistent storage for audit trails.
 - **Scaling**: Horizontal scaling via load balancer; shared database ensures session continuity across instances.
 - **Considerations**: Manage secrets (API keys, DB credentials) via env vars or secret managers; monitor memory/CPU usage for cost efficiency.
@@ -517,7 +517,7 @@ VoltAgent adapts to diverse hosting strategies. Choose based on request patterns
 - **Best for**: Sporadic traffic, REST APIs, frontend-integrated agents, minimal ops overhead.
 - **Setup**: Use `@voltagent/serverless-hono` adapter.
 
-  📖 [with-nextjs](https://github.com/voltagent/voltagent/tree/main/examples/with-nextjs) | [with-netlify-functions](https://github.com/voltagent/voltagent/tree/main/examples/with-netlify-functions)
+  📖 [with-nextjs ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-nextjs) | [with-netlify-functions ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-netlify-functions)
 - **Memory**: InMemory (session-scoped) or REST-based managed memory (VoltOps) to avoid cold-start penalties.
 - **Observability**: VoltOps remote tracing required since logs are ephemeral; session replays compensate for lack of persistent local logs.
 - **Scaling**: Auto-scales with traffic; pay-per-invocation pricing favors bursty workloads.
@@ -528,7 +528,7 @@ VoltAgent adapts to diverse hosting strategies. Choose based on request patterns
 - **Best for**: Global low-latency APIs, stateless agents, real-time interactions (chat, voice).
 - **Setup**: `@voltagent/serverless-hono` with Cloudflare-compatible storage.
 
-  📖 [with-cloudflare-workers](https://github.com/voltagent/voltagent/tree/main/examples/with-cloudflare-workers) | [Cloudflare Workers docs](https://voltagent.dev/docs/deployment/cloudflare-workers/)
+  📖 [with-cloudflare-workers ↗](https://github.com/voltagent/voltagent/tree/main/examples/with-cloudflare-workers) | [Cloudflare Workers docs ↗](https://voltagent.dev/docs/deployment/cloudflare-workers/)
 - **Memory**: InMemory per-request or Durable Objects for distributed state; avoid heavy database calls (use KV/R2 for caching).
 - **Observability**: VoltOps remote tracing mandatory; edge logs are minimal—rely on structured telemetry.
 - **Scaling**: Massive horizontal scale, <50ms cold starts, geographic distribution.
@@ -557,20 +557,20 @@ VoltAgent adapts to diverse hosting strategies. Choose based on request patterns
 1. **Scaffold the project**: `npm create voltagent-app@latest` gives you agents, workflows, VoltOps-ready observability, and scripts for dev/lint/test.
 2. **Wire your model**: Choose from 30+ Vercel AI SDK providers (OpenAI, Anthropic, Google, Mistral, Groq, xAI, etc.) and switch via configuration.
 
-   📖 [Providers & Models docs](https://voltagent.dev/docs/getting-started/providers-models/)
+   📖 [Providers & Models docs ↗](https://voltagent.dev/docs/getting-started/providers-models/)
 3. **Add domain knowledge**: Leverage retrievers and memory adapters to persist conversations and surface relevant context.
 
-   📖 [Working Memory docs](https://voltagent.dev/docs/agents/memory/working-memory/)
+   📖 [Working Memory docs ↗](https://voltagent.dev/docs/agents/memory/working-memory/)
 4. **Expose tools and workflows**: Register tools and workflows in VoltAgent so they appear in REST APIs, VoltOps console, and (optionally) MCP servers.
 
-   📖 [API Overview docs](https://voltagent.dev/docs/api/overview/) | [MCP Server docs](https://voltagent.dev/docs/agents/mcp/mcp-server/)
+   📖 [API Overview docs ↗](https://voltagent.dev/docs/api/overview/) | [MCP Server docs ↗](https://voltagent.dev/docs/agents/mcp/mcp-server/)
 5. **Instrument observability**: Run locally with automatic VoltOps tracing; add `VOLTAGENT_PUBLIC_KEY`/`VOLTAGENT_SECRET_KEY` for remote telemetry, exports, and managed memory.
 
 ### Production Hardening Checklist
 - **Error handling**: Wrap tool calls in try/catch, define retry policies for transient failures, implement circuit breakers for flaky APIs.
 - **Guardrails**: Add input validation (prompt injection, PII detection), output filters (profanity, hallucination checks), and rate limits.
 
-  📖 [Guardrails docs](https://voltagent.dev/docs/guardrails/overview/)
+  📖 [Guardrails docs ↗](https://voltagent.dev/docs/guardrails/overview/)
 - **Load testing**: Simulate peak traffic with `k6`, `Artillery`, or `Locust`; measure p95 latency, error rates, and token consumption under load.
 - **Model fallback**: Configure primary/fallback provider pairs (e.g., GPT-4 → GPT-3.5-turbo on timeout); test graceful degradation.
 - **Cost controls**: Set per-user/per-session budgets in VoltOps, cache expensive embeddings/retrievals, use smaller models for simple tasks.
@@ -587,7 +587,7 @@ As agent fleets grow, coordinated development and policy enforcement become crit
 - **Source control first**: Store instructions, system prompts, and few-shot examples in `.md` or `.txt` files under version control. Review changes via PRs with clear diffs.
 - **VoltOps prompt store**: Upload production prompts to VoltOps for A/B testing, staged rollouts, and instant rollback without redeployment.
 
-  📖 [Agent Prompts docs](https://voltagent.dev/docs/agents/prompts/)
+  📖 [Agent Prompts docs ↗](https://voltagent.dev/docs/agents/prompts/)
 - **Dynamic overrides**: Let agents fetch instructions from VoltOps at runtime; tag versions, track usage per variant, compare eval scores across iterations.
 - **Collaboration workflow**: Prompt engineers draft in VoltOps, engineers merge to source control after evals pass, ops team manages production versions.
 
@@ -596,13 +596,13 @@ As agent fleets grow, coordinated development and policy enforcement become crit
 - **Shared toolkit registry**: Organize tools into reusable kits (e.g., `@company/payments-tools`, `@company/crm-tools`); publish to internal npm registry for cross-team reuse.
 - **MCP exposure**: Tools automatically appear in MCP servers, making them discoverable to Claude Desktop, Cline, and other MCP clients.
 
-  📖 [MCP Server docs](https://voltagent.dev/docs/agents/mcp/mcp-server/)
+  📖 [MCP Server docs ↗](https://voltagent.dev/docs/agents/mcp/mcp-server/)
 - **Changelog discipline**: Version tool schemas, deprecate old signatures gracefully, and notify consumers of breaking changes via release notes.
 
 ### Context & Session Standards
 - **OperationContext conventions**: Standardize metadata keys (e.g., `userId`, `sessionId`, `tenantId`, `traceId`) so tools, hooks, and workflows access consistent data.
 
-  📖 [Operation Context docs](https://voltagent.dev/docs/agents/context/)
+  📖 [Operation Context docs ↗](https://voltagent.dev/docs/agents/context/)
 - **Audit trails**: Pass `userId` and `requestId` through all agent invocations; VoltOps traces automatically correlate sessions for compliance reviews.
 - **Cost attribution**: Tag contexts with `teamId` or `projectId`; export VoltOps data to BI tools for chargeback accounting.
 - **Access control**: Inject user permissions into context; tools check `context.user.role` before executing sensitive operations.
@@ -624,8 +624,8 @@ As agent fleets grow, coordinated development and policy enforcement become crit
 
 ## Next Steps
 
-- [Quick Start Guide](https://voltagent.dev/docs/quick-start/): Build your first agent in 5 minutes
-- [VoltAgent Blog](https://voltagent.dev/blog/): Patterns, case studies, and implementation details
-- [Discord Community](https://s.voltagent.dev/discord): Help, project discussion, architecture questions
-- [GitHub Repository](https://github.com/voltagent/voltagent): Source code and contributions
-- [Documentation](https://voltagent.dev/docs/): API reference and guides
+- [Quick Start Guide ↗](https://voltagent.dev/docs/quick-start/): Build your first agent in 5 minutes
+- [VoltAgent Blog ↗](https://voltagent.dev/blog/): Patterns, case studies, and implementation details
+- [Discord Community ↗](https://s.voltagent.dev/discord): Help, project discussion, architecture questions
+- [GitHub Repository ↗](https://github.com/voltagent/voltagent): Source code and contributions
+- [Documentation ↗](https://voltagent.dev/docs/): API reference and guides
