@@ -1,4 +1,4 @@
-# AI Agent Platform
+# VoltAgent AI Agent Platform
 
 <div align="center">
 <a href="https://github.com/VoltAgent/voltagent/">
@@ -18,7 +18,17 @@ AI agents wrap Large Language Models (LLMs) with tools, memory, and reasoning ca
 - Coordinate with other agents
 - Evaluate and adapt through feedback loops
 
+
 ### Why Building AI Agents Takes Time
+
+<br/> 
+<div align="center">
+<a href="https://github.com/VoltAgent/voltagent/">
+<img width="800" height="500" alt="diagram" src="https://github.com/user-attachments/assets/825c64ff-4033-4b0b-a8eb-192352633fd9" />
+</a>
+</div>
+
+<br/> 
 
 Shipping agents means solving:
 
@@ -534,22 +544,6 @@ VoltAgent adapts to diverse hosting strategies. Choose based on request patterns
 - **Scaling**: Massive horizontal scale, <50ms cold starts, geographic distribution.
 - **Limitations**: No Node.js APIs (fs, child_process), strict CPU/memory caps, 1MB script size; skip heavy vector libraries or LLM SDKs.
 - **Use cases**: Chat widgets, voice bots, content moderation—anything latency-sensitive and stateless.
-
-### Hybrid Setups
-- **Pattern**: Edge for routing/auth/caching + Node server for complex agents/workflows.
-- **Example**: Cloudflare Worker validates requests and streams simple responses; forwards multi-step tasks to Kubernetes-hosted VoltAgent cluster.
-- **Benefits**: Optimize cost (edge handles 90% of load), latency (critical path stays fast), and capability (offload heavyweight ops).
-
-### Decision Matrix
-
-| Request Pattern | Memory Needs | Latency Priority | Cost Sensitivity | Recommended Environment |
-| --- | --- | --- | --- | --- |
-| High-throughput API (>10 req/s sustained) | Durable, queryable | Moderate | Low | Node.js + Postgres/Supabase |
-| Bursty traffic (spikes, idle periods) | Session-scoped or managed | Moderate | High | Vercel/Netlify Functions |
-| Real-time chat/voice (<100ms target) | Minimal or cached | Critical | Moderate | Cloudflare Workers |
-| Long workflows (>30s, multi-agent) | Durable, shareable | Low | Low | Node.js (Kubernetes/ECS) |
-| Frontend-integrated (Next.js app) | Session or managed | Moderate | High | Next.js API routes (Vercel) |
-| Multi-region global service | Distributed or replicated | Critical | Moderate | Cloudflare Workers + R2/KV |
 
 ## Building Your First Production Agent
 
