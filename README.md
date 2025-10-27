@@ -545,22 +545,6 @@ VoltAgent adapts to diverse hosting strategies. Choose based on request patterns
 - **Limitations**: No Node.js APIs (fs, child_process), strict CPU/memory caps, 1MB script size; skip heavy vector libraries or LLM SDKs.
 - **Use cases**: Chat widgets, voice bots, content moderation—anything latency-sensitive and stateless.
 
-### Hybrid Setups
-- **Pattern**: Edge for routing/auth/caching + Node server for complex agents/workflows.
-- **Example**: Cloudflare Worker validates requests and streams simple responses; forwards multi-step tasks to Kubernetes-hosted VoltAgent cluster.
-- **Benefits**: Optimize cost (edge handles 90% of load), latency (critical path stays fast), and capability (offload heavyweight ops).
-
-### Decision Matrix
-
-| Request Pattern | Memory Needs | Latency Priority | Cost Sensitivity | Recommended Environment |
-| --- | --- | --- | --- | --- |
-| High-throughput API (>10 req/s sustained) | Durable, queryable | Moderate | Low | Node.js + Postgres/Supabase |
-| Bursty traffic (spikes, idle periods) | Session-scoped or managed | Moderate | High | Vercel/Netlify Functions |
-| Real-time chat/voice (<100ms target) | Minimal or cached | Critical | Moderate | Cloudflare Workers |
-| Long workflows (>30s, multi-agent) | Durable, shareable | Low | Low | Node.js (Kubernetes/ECS) |
-| Frontend-integrated (Next.js app) | Session or managed | Moderate | High | Next.js API routes (Vercel) |
-| Multi-region global service | Distributed or replicated | Critical | Moderate | Cloudflare Workers + R2/KV |
-
 ## Building Your First Production Agent
 
 ### Quick Start (Prototype to MVP)
