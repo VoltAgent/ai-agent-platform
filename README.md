@@ -167,7 +167,7 @@ As teams grow, coordination becomes critical. You need prompt version control fo
 - Role-based access control
 - Shared dashboards & analytics
 
-📖 [Operation Context docs ↗](https://voltagent.dev/docs/agents/context/)
+📖 [Operation Context docs ↗](https://voltagent.dev/docs/observability/developer-console/)
 
 Building and maintaining this requires expertise in distributed systems, LLM APIs, databases, observability, security, and DevOps.
 
